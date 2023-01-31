@@ -2,7 +2,8 @@ pyodbc
 pymssql
 authlib
 python-ldap
-install --upgrade pip
+--upgrade pip
+--upgrade setuptools
 
 
 
