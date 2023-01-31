@@ -1,7 +1,7 @@
 pyodbc
 pymssql
 authlib
-ldap
+python-ldap
 
 
 
