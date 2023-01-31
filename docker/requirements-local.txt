@@ -1,0 +1,8 @@
+pyodbc
+pymssql
+authlib
+ldap
+
+
+
+
