@@ -333,7 +333,7 @@ AUTH_USER_REGISTRATION = True
 AUTH_USER_REGISTRATION_ROLE = "admin"
 
 # When using LDAP Auth, setup the LDAP server
-AUTH_LDAP_SERVER = "ldap://172.29.10.200:389/"
+AUTH_LDAP_SERVER = "ldap://172.29.10.200:389"
 AUTH_LDAP_SEARCH = "dc=sfa,dc=local"
 #AUTH_LDAP_UID_FIELD = "cn"
 AUTH_LDAP_UID_FIELD = "sAMAccountName"
