@@ -53,7 +53,7 @@ from cachelib.base import BaseCache
 from celery.schedules import crontab
 from dateutil import tz
 from flask import Blueprint
-from flask_appbuilder.security.manager import AUTH_DB
+from flask_appbuilder.security.manager import AUTH_DB,AUTH_LDAP
 from pandas._libs.parsers import STR_NA_VALUES  # pylint: disable=no-name-in-module
 from sqlalchemy.orm.query import Query
 
@@ -318,22 +318,30 @@ DRUID_ANALYSIS_TYPES = ["cardinality"]
 # AUTH_DB : Is for database (username/password)
 # AUTH_LDAP : Is for LDAP
 # AUTH_REMOTE_USER : Is for using REMOTE_USER from web server
-AUTH_TYPE = AUTH_DB
+AUTH_TYPE = AUTH_LDAP
 
 # Uncomment to setup Full admin role name
-# AUTH_ROLE_ADMIN = 'Admin'
+AUTH_ROLE_ADMIN = 'admin'
 
 # Uncomment to setup Public role name, no authentication needed
 # AUTH_ROLE_PUBLIC = 'Public'
 
 # Will allow user self registration
-# AUTH_USER_REGISTRATION = True
+AUTH_USER_REGISTRATION = True
 
 # The default user self registration role
-# AUTH_USER_REGISTRATION_ROLE = "Public"
+AUTH_USER_REGISTRATION_ROLE = "admin"
 
 # When using LDAP Auth, setup the LDAP server
-# AUTH_LDAP_SERVER = "ldap://ldapserver.new"
+AUTH_LDAP_SERVER = "ldap://172.29.10.200:389/"
+AUTH_LDAP_SEARCH = "dc=sfa,dc=local"
+#AUTH_LDAP_UID_FIELD = "cn"
+AUTH_LDAP_UID_FIELD = "sAMAccountName"
+#AUTH_LDAP_APPEND_DOMAIN = '**'
+
+#The user used to connect the LDAP
+AUTH_LDAP_BIND_USER = "CN=Lucas Eduardo Araujo Luz,OU=RedPeak Digital B.I,OU=3-Consultores,OU=SFA,DC=sfa,DC=local"
+AUTH_LDAP_BIND_PASSWORD = "Rpk@2023"
 
 # Uncomment to setup OpenID providers example for OpenID authentication
 # OPENID_PROVIDERS = [
