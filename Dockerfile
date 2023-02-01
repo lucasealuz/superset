@@ -130,7 +130,7 @@ RUN wget https://download-installer.cdn.mozilla.net/pub/firefox/releases/${FIREF
 # Cache everything for dev purposes...
 RUN cd /app \
     && pip install --no-cache -r requirements/docker.txt \
-    && pip install --no-cache -r requirements/requirements-local.txt || true
+    && python3 -m pip install --no-cache -r requirements/requirements-local.txt || true
 USER superset
 
 
